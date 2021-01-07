@@ -8,4 +8,13 @@ describe DockingStation do
       expect(subject.release_bike).to be_an_instance_of Bike
     end
 
+    it { is_expected.to respond_to(:dock).with(1).argument }
+
+    it 'returns the instance of the bike in response to dock' do
+      bike = Bike.new
+      expect(subject.dock(bike)).to be_an_instance_of Bike
+    end
+
+    it { is_expected.to respond_to(:has_bike) }
+
 end
