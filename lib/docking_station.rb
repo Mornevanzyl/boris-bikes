@@ -1,17 +1,18 @@
 require_relative 'bike'
 
 class DockingStation
-    attr_reader :has_bike
-    
-    def initialize
-        @has_bike
-    end
+    attr_reader :bike
+
+    # def initialize
+    #     @has_bike
+    # end
 
     def release_bike
-        Bike.new
+      raise StandardError.new "No bikes available" if @bike == nil
+      Bike.new
     end
 
     def dock(bike)
-        bike
+        @bike = bike
     end
 end
