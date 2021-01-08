@@ -26,4 +26,8 @@ describe DockingStation do
       expect { subject.dock }.to raise_error
     end
 
+    it 'check default capacity is 20' do
+      DockingStation::DEFAULT_CAPACITY.should eq(20)
+    end
+
 end
