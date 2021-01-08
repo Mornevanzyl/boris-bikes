@@ -30,4 +30,6 @@ describe DockingStation do
       DockingStation::DEFAULT_CAPACITY.should eq(20)
     end
 
+    it { is_expected.to respond_to(:capacity) }
+
 end
